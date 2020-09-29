@@ -10,9 +10,12 @@ def go_back():
     global_root.quit()
 
 def check():
-    signup.addToIndex(username.get(), password.get())
-    sign_up_message = Label(frame, text = "created account")
-
+    global sign_up_message
+    result = signup.addToIndex(username.get(), password.get())
+    try:sign_up_message.grid_forget()
+    except Exception:pass
+    if result.accepted:sign_up_message = Label(frame, text = "created account")
+    else:sign_up_message = Label(frame, text = result.message)
     sign_up_message.grid(row = 2, column = 1)
 
 def main(root):

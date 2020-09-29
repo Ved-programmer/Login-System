@@ -11,8 +11,10 @@ def login():
     ved_photo.pack_forget()
 
     #use the Login_gui.py file
-    login_gui.main(root)
-    final(root)
+    try:
+        login_gui.main(root)
+        final(root)
+    except Exception:pass
 
 def sign_up():
     #forget everything
@@ -21,8 +23,10 @@ def sign_up():
     ved_photo.pack_forget()
 
     #use the sign_up_gui.py file
-    sign_up_gui.main(root)
-    final(root)
+    try:
+        sign_up_gui.main(root)
+        final(root)
+    except Exception:pass
     
 #main structure
 root = Tk()
@@ -56,4 +60,5 @@ def final(root):
 
     root.mainloop()
 
-final(root)
+if __name__ == "__main__":
+    final(root)

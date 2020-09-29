@@ -19,7 +19,8 @@ def logic(string):
         elif string[i] == "3":
             final -= length - length // 4
         elif string[i] in list("abcde fghijk,"):
-            final += 2 * length + length // i - 1
+            if i != 0:final += 2 * length + length // i - 1
+            else:final += 2 * length + length // i + 1
         elif string[i] in list("#!@$%^&*()[] <>?/;:`~<>,.'=_"):
             final += final*final//length + 4
         else:
