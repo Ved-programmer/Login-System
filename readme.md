@@ -10,7 +10,7 @@ This is a login system made with Python 3
 
       The login_gui file shows the input boxes, one to enter the username and one to enter the password, then it uses the login file to check if the combination is correct.
 
-      The login file takes the username and password, it searches through the text file(data.txt), when it finds the match, it takes the corresponding password and then hashes the password given, if the passwords match it return True.
+      The login file takes the username and password, hashed the password, it searches and finds the match through the text file(data.txt), checks if the two match
 
       The signup file takes the username and password, check the username and password, hash the password and then store the combination in the text file(data.txt).
 
