@@ -2,7 +2,7 @@ This is a login system made with Python 3
 
     How it Works:
    
-       It has an image,data.txt, hashing.py, login.py, login_gui.py, main.py, signup.py, sign_up_gui.py, checks.py files.
+      It has an image,data.txt, hashing.py, login.py, login_gui.py, main.py, signup.py, sign_up_gui.py, checks.py files.
 
       The image is displayed on the front, when the user clicks on the login button the login_gui file is called and when the user clicks on the sign up button the sign up file is called.
 
