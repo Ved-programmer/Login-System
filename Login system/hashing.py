@@ -27,19 +27,29 @@ def logic(string):
             final += 2
         
     return final
-"""
-print(revert_back("ved", logic("ved")))
-"""
 
-def increment(string):
+
+def increaseStringSize(string):
     length = len(string)
     final = list(string)
     final = list(" ".join(final))
     for i in range(1, length*2, 2):
         final.insert(i - 1, "")
         final[i - 1] = letter[(letter.index(final[i]) + len(final)) % len(letter) - 1]
-    return "".join(final)
+
+    cur = "".join(final)
+    increasedSizedString = ""
+    for j in range(len(cur)):
+        idx1 = (letter.index(cur[j]) + len(string)) % len(letter)
+        idx2 = (letter.index(cur[j]) // len(string)) % len(letter)
+        idx3 = abs(letter.index(cur[j]) - len(string)) % len(letter)
+        idx4 = (letter.index(cur[j]) * len(string)) % len(letter)
+        idx5 = (letter.index(cur[j]) + len(string) // idx4 % len(letter))
+        increasedSizedString += cur[i] + letter[idx1] + letter[idx2] + letter[idx3] + letter[idx4] + letter[idx5]
+    return increasedSizedString
 
 
-def salt(string):
-    pass
+    
+
+
+

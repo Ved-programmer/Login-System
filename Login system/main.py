@@ -35,6 +35,10 @@ root.maxsize(612, 463)
 root.title("Account setup")
 
 def final(root):
+    #resetting basic settings
+    root.geometry("610x462")
+    root.maxsize(612, 463)
+    root.title("Account setup")
 
     #login in frame
     global f1
