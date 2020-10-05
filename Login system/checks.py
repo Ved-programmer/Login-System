@@ -2,6 +2,9 @@ def check(username, password, passChange): #The passChange functionality is not 
     if not passChange:
         try:assert not(checkIfUsernameExists(username))
         except Exception:return message(False, f"The username {username} is unavailable, please try a different username")
+    else:
+        try:assert not(checkIfUsernameExists(username))
+        except Exception:return message(False, f"The username {username} does not exist please re-check this username")
     
     securePasswordChecks = [passLenCheck, containsProperChars]
     for check in securePasswordChecks:
