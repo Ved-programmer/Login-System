@@ -4,7 +4,7 @@ def passChange(username, oldPassword, newPassword):#TODO: The password Changing 
     check = checks.check(username, newPassword, True)
     if check.accepted:
         if checkIfPasswordsMatch(username, oldPassword):setPassword(username, newPassword)
-        else:check.message = "Either the username or the password is incorrect";check.accepted = False
+        else:return checks.message(False, "Either the username or the password is incorrect")
     return check
 
 
@@ -30,6 +30,3 @@ def getLineNum(username):
     for i, d in enumerate(data):
         if d.split("-")[0] == username:return [i, d]
     return [-1, ""]
-
-
-
