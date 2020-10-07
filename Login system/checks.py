@@ -3,7 +3,7 @@ def check(username, password, passChange): #The passChange functionality is not 
         try:assert not(checkIfUsernameExists(username))
         except Exception:return message(False, f"The username {username} is unavailable, please try a different username")
     else:
-        try:assert not(checkIfUsernameExists(username))
+        try:assert checkIfUsernameExists(username)
         except Exception:return message(False, f"The username {username} does not exist please re-check this username")
     
     securePasswordChecks = [passLenCheck, containsProperChars]
@@ -42,5 +42,4 @@ class message:
     def __init__(self, accepted, message):
         self.accepted = accepted
         self.message = message
-
 

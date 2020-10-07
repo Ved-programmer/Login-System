@@ -44,7 +44,7 @@ def increaseStringSize(string):
         idx2 = (letter.index(cur[j]) // len(string)) % len(letter)
         idx3 = abs(letter.index(cur[j]) - len(string)) % len(letter)
         idx4 = (letter.index(cur[j]) * len(string)) % len(letter)
-        idx5 = (letter.index(cur[j]) + len(string) // idx4 % len(letter))
+        idx5 = (letter.index(cur[j]) + len(string) // (idx4+1)) % len(letter)
         increasedSizedString += cur[i] + letter[idx1] + letter[idx2] + letter[idx3] + letter[idx4] + letter[idx5]
     return increasedSizedString
 
