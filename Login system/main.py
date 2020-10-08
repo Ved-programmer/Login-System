@@ -1,8 +1,8 @@
 #imports
 from tkinter import *
 from PIL import Image, ImageTk
-import login_gui
-import sign_up_gui
+import loginGui
+import signUpGui
 
 def login():
     #forget everything
@@ -12,7 +12,7 @@ def login():
 
     #use the Login_gui.py file
     try:
-        login_gui.main(root)
+        loginGui.main(root)
         final(root)
     except Exception:pass
 
@@ -24,7 +24,7 @@ def sign_up():
 
     #use the sign_up_gui.py file
     try:
-        sign_up_gui.main(root)
+        signUpGui.main(root)
         final(root)
     except Exception:pass
     
