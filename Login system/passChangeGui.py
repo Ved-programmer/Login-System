@@ -12,7 +12,12 @@ def change():
 
 
 def go_back():
-    pass
+    global globalRoot
+    for i in packs:
+        i.pack_forget()
+    
+    #remaking initial setup
+    globalRoot.quit()
 
 def main(root):
     global globalRoot

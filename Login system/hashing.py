@@ -1,5 +1,5 @@
-letter = "abcde fghijklmnopq rstuvwxyz"
-letter += letter.upper() + "1234567890 #!@$%^&*()[] <>?/;:`~<>,.'=_"
+letter = "abcde fghijklmnopqrstuvwxyz"
+letter += letter.upper() + "1234567890#!@$%^&*()[] <>?/;:`~<>,.'=_"
 def revert_back(string, times):
     string = list(string)
     for i in range(len(string)):
