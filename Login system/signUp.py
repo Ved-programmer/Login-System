@@ -8,4 +8,3 @@ def addToIndex(username, password):
             f.write(f"{username}-{password}\n")
     return result
 
-addToIndex("ved", "Ved2007#")
