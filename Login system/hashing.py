@@ -20,7 +20,7 @@ def logic(string):
             final -= length - length // 4
         elif string[i] in list("abcde fghijk,"):
             if i != 0:final += 2 * length + length // i - 1
-            else:final += 2 * length + length // i + 1
+            else:final += 2 * length + length // (i + 1)
         elif string[i] in list("#!@$%^&*()[] <>?/;:`~<>,.'=_"):
             final += final*final//length + 4
         else:
@@ -47,6 +47,7 @@ def increaseStringSize(string):
         idx5 = (letter.index(cur[j]) + len(string) // (idx4+1)) % len(letter)
         increasedSizedString += cur[i] + letter[idx1] + letter[idx2] + letter[idx3] + letter[idx4] + letter[idx5]
     return increasedSizedString
+
 
 
     
