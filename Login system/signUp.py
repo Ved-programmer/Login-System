@@ -7,4 +7,3 @@ def addToIndex(username, password):
         with open("data.txt", "a") as f:
             f.write(f"{username}-{password}\n")
     return result
-

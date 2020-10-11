@@ -1,5 +1,7 @@
 import hashing
+from checks import checkIfUsernameExists 
 def delete(username, password):
+    if not checkIfUsernameExists(username):return False
     value = getLine(username)
     hashedPassword = value[0].split("-")[1][:-1] if value[0].split("-")[1].endswith("\n") else value[0].split("-")[1]
     if hashing.revert_back(hashing.increaseStringSize(password), hashing.logic(password)) == hashedPassword:

@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Button, Entry, Label, X,  TOP, Frame, LEFT, StringVar, Tk
 import passChange
 
 def change():
@@ -11,7 +11,7 @@ def change():
     resultMessage.grid(row = 5, column = 1)
 
 
-def go_back():
+def back():
     global globalRoot
     for i in packs:
         i.pack_forget()
@@ -40,33 +40,42 @@ def main(root):
     frame.pack(side = LEFT, anchor = "nw")
     space_from_start = " " * 3
 
-    username_label = Label(frame, text = space_from_start + "username: ", font = "Roboto 15", pady = 10)
-    username_label.grid(row = 0, column = 0)
+    usernameLabel = Label(frame, text = space_from_start + "username: ", font = "Roboto 15", pady = 10)
+    usernameLabel.grid(row = 0, column = 0)
 
-    oldPassword_label = Label(frame, text = space_from_start + "old password: ", font = "Roboto 15", pady = 10)
-    oldPassword_label.grid(row = 1, column = 0)
+    oldPasswordLabel = Label(frame, text = space_from_start + "old password: ", font = "Roboto 15", pady = 10)
+    oldPasswordLabel.grid(row = 1, column = 0)
 
-    newPassword_label = Label(frame, text = space_from_start + "new password: ", font = "Roboto 15", pady = 10)
-    newPassword_label.grid(row = 2, column = 0)
+    newPasswordLabel = Label(frame, text = space_from_start + "new password: ", font = "Roboto 15", pady = 10)
+    newPasswordLabel.grid(row = 2, column = 0)
 
 
     username = StringVar()
     oldPassword = StringVar()
     newPassword = StringVar()
-    username_entry = Entry(frame, textvariable = username)
-    oldPassword_entry = Entry(frame, textvariable = oldPassword)
-    newPassword_entry = Entry(frame, textvariable = newPassword)
+    usernameEntry = Entry(frame, textvariable = username)
+    oldPasswordEntry = Entry(frame, textvariable = oldPassword)
+    newPasswordEntry = Entry(frame, textvariable = newPassword)
 
 
-    username_entry.grid(row = 0, column = 1)
-    oldPassword_entry.grid(row = 1, column = 1)
-    newPassword_entry.grid(row = 2, column = 1)
+    usernameEntry.grid(row = 0, column = 1)
+    oldPasswordEntry.grid(row = 1, column = 1)
+    newPasswordEntry.grid(row = 2, column = 1)
 
-    submit_button = Button(frame, text = "submit", command = change)
-    submit_button.grid(row = 3, column = 0)
+    submitButton = Button(frame, text = "submit", command = change)
+    submitButton.grid(row = 3, column = 0)
 
-    goBack = Button(frame, text = "go back", command = go_back)
+    goBack = Button(frame, text = "go back", command = back)
     goBack.grid(row = 4, column = 0)
 
 
     root.mainloop()
+
+if __name__ == "__main__":
+    root = Tk()
+    HEIGHT = 378
+    WIDTH = 612
+    root.geometry(f"{WIDTH}x{HEIGHT}")
+    root.maxsize(WIDTH + 1, HEIGHT + 1)
+    root.minsize(WIDTH - 1, HEIGHT - 1)
+    main(root)

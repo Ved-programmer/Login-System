@@ -1,6 +1,8 @@
 from hashing import *
+from checks import checkIfUsernameExists
 
 def getVal(username):
+    if not checkIfUsernameExists(username):return False
     with open("data.txt", "r") as f:
         cur = f.readline()
         while cur.split("-")[0] != username:
@@ -14,4 +16,5 @@ def check_if_correct(cur_password, hashed_password):
 
 def login_or_not(username, password):
     hashed = getVal(username)
+    if hashed == False:return False
     return check_if_correct(password, hashed)

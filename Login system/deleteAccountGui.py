@@ -1,21 +1,21 @@
 import deleteAccount
-from tkinter import *
+from tkinter import Button, Entry, Label, X,  TOP, Frame, LEFT, StringVar, Tk
 
-def go_back():
-    global global_root
+def back():
+    global globalRoot
     for i in packs:
         i.pack_forget()
     
     #remaking initial setup
-    global_root.quit()
+    globalRoot.quit()
 
-def check():
+def delete():
     global deleteMessage
     result = deleteAccount.delete(username.get(), password.get())
     try:deleteMessage.grid_forget()
     except Exception:pass
     if result:deleteMessage = Label(frame, text = "Deleted Account")
-    else:deleteMessage = Label(frame, text = "Incorrect  Username or Password")
+    else:deleteMessage = Label(frame, text = "Incorrect Username or Password")
     deleteMessage.grid(row = 2, column = 1)
 
 def main(root):
@@ -23,8 +23,9 @@ def main(root):
     global username
     global password
     global packs
-    global global_root
-    global_root = root
+    global globalRoot
+
+    globalRoot = root
     root.title("Delete Account")
     packs = []
 
@@ -37,24 +38,34 @@ def main(root):
     frame.pack(side = LEFT, anchor = "nw")
     space_from_start = " " * 3
 
-    username_label = Label(frame, text = space_from_start + "username: ", font = "Roboto 15", pady = 10)
-    username_label.grid(row = 0, column = 0)
+    usernameLabel = Label(frame, text = space_from_start + "username: ", font = "Roboto 15", pady = 10)
+    usernameLabel.grid(row = 0, column = 0)
 
-    password_label = Label(frame, text = space_from_start + "password: ", font = "Roboto 15", pady = 10)
-    password_label.grid(row = 1, column = 0)
+    passwordLabel = Label(frame, text = space_from_start + "password: ", font = "Roboto 15", pady = 10)
+    passwordLabel.grid(row = 1, column = 0)
 
     username = StringVar()
     password = StringVar()
-    username_entry = Entry(frame, textvariable = username)
-    password_entry = Entry(frame, textvariable = password)
+    usernameEntry = Entry(frame, textvariable = username)
+    passwordEntry = Entry(frame, textvariable = password)
 
-    username_entry.grid(row = 0, column = 1)
-    password_entry.grid(row = 1, column = 1)
+    usernameEntry.grid(row = 0, column = 1)
+    passwordEntry.grid(row = 1, column = 1)
 
-    submit_button = Button(frame, text = "submit", command = check)
-    submit_button.grid(row = 2, column = 0)
+    submitButton = Button(frame, text = "delete Account", command = delete)
+    submitButton.grid(row = 2, column = 0)
 
-    goBack = Button(frame, text = "go back", command = go_back)
+    goBack = Button(frame, text = "go back", command = back)
     goBack.grid(row = 3, column = 0)
 
     root.mainloop()
+
+if __name__ == "__main__":
+    root = Tk()
+    HEIGHT = 378
+    WIDTH = 612
+    root.geometry(f"{WIDTH}x{HEIGHT}")
+    root.maxsize(WIDTH + 1, HEIGHT + 1)
+    root.minsize(WIDTH - 1, HEIGHT - 1)
+    main(root)
+
