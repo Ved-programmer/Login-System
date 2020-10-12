@@ -1,37 +1,74 @@
 # Login System
 
 ## About
-
 *A Login System Made with Python 3*
 
+It supports functionality like creating an account, logging in, changing the password of an account and deleting an account. The passwords are encrypted so access to the username-password index wouldn't let an hacker know the password to your account. 
+
+> The program only supports the following characters:
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;:`~,.'=_
+
+---
 ## How it Works:
+   
 
--  It has an image,data.txt, hashing.py, login.py, login_gui.py, main.py, signup.py, sign_up_gui.py, checks.py files.
+- ### Overview :
+   * The main.py file takes shows four buttons of the four features(Signing up, Logging in, deleteing, changing password), each feature has two files, one for the front end and one for the backend. 
+   
+   * Some files checks.py, hashing.py and the guiUtilityFuncs.py are files that either stop repetetive code or have seperate logic.
 
--  The image is displayed on the front, when the user clicks on the login button the login_gui file is called and when the user clicks on the sign up button the signup file is called.
 
--  The sign_up_gui file shows two input boxes, one to enter the username and one to enter the password, then it uses the signup file to actually create an account.
+- ### Individual file list :
+   
+   * **main.py** - Main execution of the program, shows all the features.
+   
+   * **deleteAccountGui.py** - Front End of the deleting account feature.
 
--  The login_gui file shows the input boxes, one to enter the username and one to enter the password, then it uses the login file to check if the combination is correct.
+   * **deleteAccount.py** - Back End of the deleting account feature.
 
--  The login file takes the username and password, hashes the password, it searches and finds the match through the text file(data.txt), checks if the two match
+   * **loginGui.py** - Front End of the Log In feature.
 
--  The signup file takes the username and password, checks them, hashes the password and then store the combination in the text file(data.txt).
+   * **login.py** - Back End of the Log In feature.
 
--  The hashing file takes a string and then hashes the password using an algorithm that is not very good but is made by me, good enough for the purposes of this login system
+   * **passChangeGui.py** - Front End of the password change feature.
 
--  The checks.py file performs some checks to see the sign up process is done securely and perfectly following all the rules.
-  
-That's it!
+   * **passChange.py** - Back End of the password change feature.
+
+   * **signUpGui.py** - Front End of the creating account feature.
+
+   * **signUp.py** - Back End of the creating account feature.
+
+   * **checks.py** - Checks a given username and password combination, assuring all rules are followed.
+
+   * **guiUtilityFuncs.py** - Functions that are used by front end files.
+
+   * **hashing.py** - Hashes a given string(for encrypting passwords)
+   
+
+- ### Interaction between files :
+   * The main.py file uses the deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py file according to the button clicked. 
+
+   * The deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py uses deleteAccount.py, login.py, passChange.py, signUp.py files respectively for the backend.
+
+   * The gui files(deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py) the guiUtilityFuncs.py files to create the gui, as the guiUtilityFuncs.py contains the blue print and repetetive code needed by the files.
+
+   * The deleteAccount.py removes the particular username-password combination from the data.txt file, the loginGui.py checks the username-password combination in the data.txt file. The passChange.py file changes the password of a given username, signUp.py file makes and stores the username-password combination in the data.txt file.
+
+   * For all the reading and writing from the data.txt to take place the passwords needed to be encrypted. The hashing.py takes in a string and encrypts it.
+
+   * While creating an account or changing password, the checks.py file does important checks, like the strength of the password, checking if no duplicate accounts can be made etc.  
+
+---
 
 ## Status :
 
 In-development, not in condition to use
 
+---
+
+
 ## Can I contribute ?
 Yes
 
 
-*-Thank you*
-
-
+*-Thank you* 
