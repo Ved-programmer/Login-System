@@ -1,5 +1,6 @@
 import checks
 import hashing
+
 def passChange(username, oldPassword, newPassword):#TODO: The password Changing functionality
     check = checks.check(username, newPassword, True)
     if check.accepted:

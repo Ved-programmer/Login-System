@@ -1,15 +1,8 @@
 from tkinter import Button, Entry, Label, X,  TOP, Frame, LEFT, StringVar, Tk
 import login
-def back():
-    global globalRoot
+import guiUtilityFuncs
 
-    #forgetting everything
-    for i in packs:
-        i.pack_forget()
-    
-    #remaking initial setup
-    globalRoot.quit()
-
+#Login Logic
 def check():
     global loginMessage
 
@@ -24,51 +17,31 @@ def check():
     loginMessage.grid(row = 2, column = 1)
 
 def main(root):
-    global frame
-    global username
-    global password
-    global packs
-    global globalRoot
-    globalRoot = root
+    #Initialization
+    global frame, username, password, packs
     root.title("Log In")
     packs = []
 
-    heading = Label(text = "Log In", bg="black", fg = "yellow", padx = "50", pady = "30", font = "OpenSans 30 ")
-    packs.append(heading)
-    heading.pack(fill = X, side = TOP, pady = 5)
+    #Setting Heading and Frame
+    guiUtilityFuncs.headingDesign("Log In", packs, root)
+    frame = guiUtilityFuncs.formFrameDesign(root, packs)
 
-    frame = Frame(root)
-    packs.append(frame)
-    frame.pack(side = LEFT, anchor = "nw")
-    space_from_start = " " * 3
+    #Labels
+    guiUtilityFuncs.entranceLabelDesign(frame, "username: ", 0, 0)
+    guiUtilityFuncs.entranceLabelDesign(frame, "password: ", 1, 0)
 
-    usernameLabel = Label(frame, text = space_from_start + "username: ", font = "Roboto 15", pady = 10)
-    usernameLabel.grid(row = 0, column = 0)
-
-    passwordLabel = Label(frame, text = space_from_start + "password: ", font = "Roboto 15", pady = 10)
-    passwordLabel.grid(row = 1, column = 0)
-
-    username = StringVar()
-    password = StringVar()
-    usernameEntry = Entry(frame, textvariable = username)
-    passwordEntry = Entry(frame, textvariable = password)
-
-    usernameEntry.grid(row = 0, column = 1)
-    passwordEntry.grid(row = 1, column = 1)
+    #Inputs
+    username = guiUtilityFuncs.entranceDesign(frame, 0, 1)
+    password = guiUtilityFuncs.entranceDesign(frame, 1, 1)
 
     submitButton = Button(frame, text = "submit", command = check)
     submitButton.grid(row = 2, column = 0)
 
-    goBack = Button(frame, text = "go back", command = back)
+    goBack = Button(frame, text = "go back", command = lambda : guiUtilityFuncs.back(packs, root))
     goBack.grid(row = 3, column = 0)
 
     root.mainloop()
 
 if __name__ == "__main__":
-    root = Tk()
-    HEIGHT = 378
-    WIDTH = 612
-    root.geometry(f"{WIDTH}x{HEIGHT}")
-    root.maxsize(WIDTH + 1, HEIGHT + 1)
-    root.minsize(WIDTH - 1, HEIGHT - 1)
+    root = guiUtilityFuncs.basicStructure(612, 378, 1, "Log In")
     main(root)
