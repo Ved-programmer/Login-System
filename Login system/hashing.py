@@ -1,6 +1,5 @@
-letter = "abcdefghijklmnopqrstuvwxyz"
-letter += letter.upper() + "1234567890#!@$%^&*()[] <>?/;:`~,.'=_"
-print(letter)
+letter = """abcdefghijklmnopqrstuvwxyz"""
+letter += letter.upper() + """1234567890#!@$%^&*()[] "<>?/;:`~,.'=_"""
 def revert_back(string, times):
     string = list(string)
     for i in range(len(string)):
@@ -31,27 +30,24 @@ def logic(string):
 
 
 def increaseStringSize(string):
-    length = len(string)
-    final = list(string)
-    final = list(" ".join(final))
-    for i in range(1, length*2, 2):
-        final.insert(i - 1, "")
-        final[i - 1] = letter[(letter.index(final[i]) + len(final)) % len(letter) - 1]
+    final = ""
+    for i in string:
+        final += letter[(letter.index(i) + len(final)) % len(letter) - 1]
 
-    cur = "".join(final)
+    cur = final
     increasedSizedString = ""
     for j in range(len(cur)):
         idx1 = (letter.index(cur[j]) + len(string)) % len(letter)
-        idx2 = (letter.index(cur[j]) // len(string)) % len(letter)
+        if string[j] in list("abcdefghijklmnopqrstuvwxyz .'_="):idx2 = (letter.index(cur[j]) // len(string)) % len(letter)
+        else:idx2 = letter.index(string[j]) + 2
         idx3 = abs(letter.index(cur[j]) - len(string)) % len(letter)
         idx4 = (letter.index(cur[j]) * len(string)) % len(letter)
-        idx5 = (letter.index(cur[j]) + len(string) // (idx4+1)) % len(letter)
-        increasedSizedString += cur[i] + letter[idx1] + letter[idx2] + letter[idx3] + letter[idx4] + letter[idx5]
+        increasedSizedString += letter[idx1] + letter[idx2] + cur[j] + letter[idx3] + letter[idx4]
     return increasedSizedString
 
-
-
-    
-
-
+def encrypt(string, encryptionLevel = 2):
+    cur = string
+    for _ in range(encryptionLevel):
+        cur = revert_back(increaseStringSize(cur), logic(cur))
+    return cur
 
