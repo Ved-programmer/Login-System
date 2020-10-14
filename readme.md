@@ -41,6 +41,8 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
    * **checks.py** - Checks a given username and password combination, assuring all rules are followed.
 
    * **guiUtilityFuncs.py** - Functions that are used by front end files.
+   
+   * **backEndUtilityFuncs.py** - Functions that are used by the back end files.
 
    * **hashing.py** - Hashes a given string(for encrypting passwords)
    
@@ -52,7 +54,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
 
    * The gui files(deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py) the guiUtilityFuncs.py files to create the gui, as the guiUtilityFuncs.py contains the blue print and repetetive code needed by the files.
 
-   * The deleteAccount.py removes the particular username-password combination from the data.txt file, the loginGui.py checks the username-password combination in the data.txt file. The passChange.py file changes the password of a given username, signUp.py file makes and stores the username-password combination in the data.txt file.
+   * The deleteAccount.py removes the particular username-password combination from the data.txt file, the loginGui.py checks the username-password combination in the data.txt file. The passChange.py file changes the password of a given username, signUp.py file makes and stores the username-password combination in the data.txt file. These backend files use the backEndUtilityFuncs.py file for repetetive tasks.
 
    * For all the reading and writing from the data.txt to take place the passwords needed to be encrypted. The hashing.py takes in a string and encrypts it.
 
