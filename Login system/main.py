@@ -1,4 +1,5 @@
 #imports
+import sys
 from tkinter import Tk, Frame, Button, SUNKEN, Y
 import loginGui, signUpGui, passChangeGui, deleteAccountGui
 

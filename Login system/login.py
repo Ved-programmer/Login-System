@@ -1,20 +1,6 @@
-from hashing import *
-from checks import checkIfUsernameExists
-
-def getVal(username):
-    if not checkIfUsernameExists(username):return False
-    with open("data.txt", "r") as f:
-        cur = f.readline()
-        while cur.split("-")[0] != username:
-            cur = f.readline()
-        return cur.split("-")[1]
-
-def check_if_correct(cur_password, hashed_password):
-    converted = revert_back(increaseStringSize(cur_password), logic(cur_password))
-    return converted == hashed_password[:-1]
-
+import backEndUtilityFuncs
 
 def login_or_not(username, password):
-    hashed = getVal(username)
+    hashed = backEndUtilityFuncs.getLine(username)
     if hashed == False:return False
-    return check_if_correct(password, hashed)
+    return backEndUtilityFuncs.checkIfCorrect(password, hashed[1].split("-")[1].removesuffix("\n"))
