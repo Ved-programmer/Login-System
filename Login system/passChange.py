@@ -5,8 +5,7 @@ import backEndUtilityFuncs
 def passChange(username, oldPassword, newPassword):
     check = checks.check(username, newPassword, True)
     if check.accepted:
-        hashed = backEndUtilityFuncs.getLine(username)[1].split("-")[1]
-        if backEndUtilityFuncs.checkIfCorrect(oldPassword, hashed):setPassword(username, newPassword)
+        if backEndUtilityFuncs.checkIfCorrect(username, oldPassword):setPassword(username, newPassword)
         else:return checks.message(False, "Either the username or the password is incorrect")
     return check
 

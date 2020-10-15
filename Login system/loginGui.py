@@ -34,7 +34,7 @@ def main(root):
     username = guiUtilityFuncs.entranceDesign(frame, 0, 1)
     password = guiUtilityFuncs.entranceDesign(frame, 1, 1)
 
-    submitButton = Button(frame, text = "submit", command = check)
+    submitButton = Button(frame, text = "Log In", command = check)
     submitButton.grid(row = 2, column = 0)
 
     goBack = Button(frame, text = "go back", command = lambda : guiUtilityFuncs.back(packs, root))

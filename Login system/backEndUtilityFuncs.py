@@ -17,6 +17,9 @@ def getLine(username):
         return [index, cur.removesuffix("\n")]
     return [-1, ""]
 
-def checkIfCorrect(unhashed, hashed):
-    return hashed == hashing.encrypt(unhashed)
-                                    
+def checkIfCorrect(username, password):
+    line = getLine(username)
+    if line == False:return False
+    storePassword = line[1][line[1].index("-") + 1:]
+    userPasswordHash = hashing.encrypt(password)
+    return storePassword == userPasswordHash

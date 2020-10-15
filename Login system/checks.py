@@ -19,11 +19,12 @@ def passLenCheck(password):
 
 def containsProperChars(password):
     number = symbol = upperCase = lowerCase = False
+    if "-" in password:return message(False, "The password can't contain '-' character")
     for i in password:
         try:
             int(i);number = True;continue
         except Exception:pass
-        if i in list("""!@#$%^&*()-_+={}[]:;'"<,>.?/\|`~"""):
+        if i in list("""!@#$%^&*()_+={}[]:;'"<,>.?/\|`~"""):
             symbol = True;continue
         upperCase = i == i.upper() or upperCase
         lowerCase = i == i.lower() or lowerCase

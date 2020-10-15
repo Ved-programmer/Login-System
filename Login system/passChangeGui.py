@@ -31,7 +31,7 @@ def main(root):
     oldPassword = guiUtilityFuncs.entranceDesign(frame, 1, 1)
     newPassword = guiUtilityFuncs.entranceDesign(frame, 2, 1)
 
-    submitButton = Button(frame, text = "submit", command = change)
+    submitButton = Button(frame, text = "Change Password", command = change)
     submitButton.grid(row = 3, column = 0)
 
     goBack = Button(frame, text = "go back", command = lambda : guiUtilityFuncs.back(packs, root))

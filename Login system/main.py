@@ -1,5 +1,4 @@
 #imports
-import sys
 from tkinter import Tk, Frame, Button, SUNKEN, Y
 import loginGui, signUpGui, passChangeGui, deleteAccountGui
 
@@ -17,8 +16,7 @@ def final(root):
     HEIGHT = 378
     WIDTH = 612
     root.geometry(f"{WIDTH}x{HEIGHT}")
-    root.maxsize(WIDTH + 1, HEIGHT + 1)
-    root.minsize(WIDTH - 1, HEIGHT - 1)
+    root.maxsize(WIDTH, HEIGHT); root.minsize(WIDTH, HEIGHT)
     root.title("Account Setup")
 
     global loginFrame, deleteAccountFrame, changePasswordFrame, signUpFrame, packs

@@ -30,7 +30,7 @@ def main(root):
     username = guiUtilityFuncs.entranceDesign(frame, 0, 1)
     password = guiUtilityFuncs.entranceDesign(frame, 1, 1)
 
-    submitButton = Button(frame, text = "delete Account", command = delete)
+    submitButton = Button(frame, text = "Delete Account", command = delete)
     submitButton.grid(row = 2, column = 0)
     
     goBack = Button(frame, text = "go back", command = lambda : guiUtilityFuncs.back(packs, root))
