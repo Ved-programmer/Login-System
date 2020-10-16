@@ -1,7 +1,7 @@
 # Login System
 
 ## About
-*A Login System Made with Python 3*
+*A Login System Made with Python 3.9*
 
 It supports functionality like creating an account, logging in, changing the password of an account and deleting an account. The passwords are encrypted so access to the username-password index wouldn't let an hacker know the password to your account. 
 
@@ -15,7 +15,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
 - ### Overview :
    * The main.py file takes shows four buttons of the four features(Signing up, Logging in, deleteing, changing password), each feature has two files, one for the front end and one for the backend. 
    
-   * Some files checks.py, hashing.py and the guiUtilityFuncs.py are files that either stop repetetive code or have seperate logic.
+   * Some files checks.py, hashing.py, backEndUtilityFuncs.py and the guiUtilityFuncs.py are files that either stop repetetive code or have seperate logic.
 
 
 - ### Individual file list :
@@ -67,7 +67,6 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
 In-development, not in condition to use
 
 ---
-
 
 ## Can I contribute ?
 Yes
