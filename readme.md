@@ -13,7 +13,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
    
 
 - ### Overview :
-   * The main.py file shows four buttons of the four features(Signing up, Logging in, deleteing, changing password), each feature has two files, one for the front end and one for the backend. 
+   * The main.py file shows four buttons of the four features(Signing up, Logging in, deleting, changing password), each feature has two files, one for the front end and one for the backend. 
    
    * Some files checks.py, hashing.py, backEndUtilityFuncs.py and the guiUtilityFuncs.py are files that either stop repetetive code or have seperate logic.
 
@@ -40,7 +40,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
 
    * **checks.py** - Checks a given username and password combination, assuring all rules are followed.
 
-   * **guiUtilityFuncs.py** - Functions that are used by front end files.
+   * **guiUtilityFuncs.py** - Functions that are used by the front end files.
    
    * **backEndUtilityFuncs.py** - Functions that are used by the back end files.
 
@@ -48,23 +48,23 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
    
 
 - ### Interaction between files :
-   * The main.py file uses the deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py file according to the button clicked. 
+   * The main.py file uses the deleteAccountGui.py, loginGui.py, passChangeGui.py and signUpGui.py file according to the button clicked. 
 
-   * The deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py uses deleteAccount.py, login.py, passChange.py, signUp.py files respectively for the backend.
+   * The deleteAccountGui.py, loginGui.py, passChangeGui.py and signUpGui.py use the deleteAccount.py, login.py, passChange.py and signUp.py files respectively for the backend.
 
-   * The gui files(deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py) the guiUtilityFuncs.py files to create the gui, as the guiUtilityFuncs.py contains the blue print and repetetive code needed by the files.
+   * The gui files(deleteAccountGui.py, loginGui.py, passChangeGui.py, signUpGui.py) use the guiUtilityFuncs.py files to create the gui, as the guiUtilityFuncs.py contains the blue print and repetetive code needed by the files.
 
-   * The deleteAccount.py removes the particular username-password combination from the data.txt file, the loginGui.py checks the username-password combination in the data.txt file. The passChange.py file changes the password of a given username, signUp.py file makes and stores the username-password combination in the data.txt file. These backend files use the backEndUtilityFuncs.py file for repetetive tasks.
+   * The deleteAccount.py removes the particular username-password combination from the data.txt file, the login.py checks the username-password combination in the data.txt file. The passChange.py file changes the password of a given username, signUp.py file makes and stores the username-password combination in the data.txt file. These backend files use the backEndUtilityFuncs.py file for repetetive tasks.
 
-   * For all the reading and writing from the data.txt to take place the passwords needed to be encrypted. The hashing.py takes in a string and encrypts it.
+   * For all the reading and writing from the data.txt to take place the passwords need to be encrypted. The hashing.py takes in a string and encrypts it.
 
    * While creating an account or changing password, the checks.py file does important checks, like the strength of the password, checking if no duplicate accounts can be made etc.  
 
 ---
 
-## Status :
+## Current Status :
 
-In-development, not in condition to use
+Bug fixes, In condition to use
 
 ---
 
