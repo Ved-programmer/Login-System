@@ -12,6 +12,7 @@ def check(username, password, passChange):
 
 def passLenCheck(password):
     if len(password) < 8:return message(False, "The password needs to be atleast 8 characters long")
+    if len(password) > 50:return message(False, "The password must be less then 50 characters")
     return message(True, "The password is accepted")
 
 def containsProperChars(password):
@@ -21,7 +22,7 @@ def containsProperChars(password):
         try:
             int(i);number = True;continue
         except Exception:pass
-        if i in list("""!@#$%^&*()_+={}[]:;'"<,>.?/\|`~"""):
+        if i in list(r"""!@#$%^&*()_+={}[]:;'"<,>.?/\|`~"""):
             symbol = True;continue
         upperCase = i == i.upper() or upperCase
         lowerCase = i == i.lower() or lowerCase
