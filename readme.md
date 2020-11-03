@@ -13,14 +13,14 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
    
 
 - ### Overview :
-   * The main.py file shows four buttons of the four features(Signing up, Logging in, deleting, changing password), each feature has two files, one for the front end and one for the backend. 
+   * The main.pyw file shows four buttons of the four features(Signing up, Logging in, deleting, changing password), each feature has two files, one for the front end and one for the backend. 
    
    * Some files checks.py, hashing.py, backEndUtilityFuncs.py and the guiUtilityFuncs.py are files that either stop repetetive code or have seperate logic.
 
 
 - ### Individual file list :
    
-   * **main.py** - Main execution of the program, shows all the features.
+   * **main.pyw** - Main execution of the program, shows all the features.
    
    * **deleteAccountGui.py** - Front End of the deleting account feature.
 
@@ -48,7 +48,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
    
 
 - ### Interaction between files :
-   * The main.py file uses the deleteAccountGui.py, loginGui.py, passChangeGui.py and signUpGui.py file according to the button clicked. 
+   * The main.pyw file uses the deleteAccountGui.py, loginGui.py, passChangeGui.py and signUpGui.py file according to the button clicked. 
 
    * The deleteAccountGui.py, loginGui.py, passChangeGui.py and signUpGui.py use the deleteAccount.py, login.py, passChange.py and signUp.py files respectively for the backend.
 
