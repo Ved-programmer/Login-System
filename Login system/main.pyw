@@ -1,19 +1,20 @@
 #imports
 from tkinter import Tk, Frame, Button, SUNKEN, Y
-import loginGui, signUpGui, passChangeGui, deleteAccountGui
+import loginGui, signUpGui, passChangeGui, deleteAccountGui, showAbout
 
 #Switching File, given the fileName
 def switchFile(file):
     def main():
         ClearRoot()
         try:
-            file.main(root);final(root)
+            file.main(root)
+            final(root)
         except Exception:pass
     return main
 
 def final(root):
     #Setting basic settings.
-    HEIGHT = 378
+    HEIGHT = 502
     WIDTH = 612
     root.geometry(f"{WIDTH}x{HEIGHT}")
     root.maxsize(WIDTH, HEIGHT); root.minsize(WIDTH, HEIGHT)
@@ -37,6 +38,12 @@ def final(root):
     #Sign up frame
     signUpFrame = makeFrame(root, 1, 1)
     makeButton(signUpFrame, "Sign up", switchFile(signUpGui))
+
+    aboutMeFrame = Frame(root, bg = "red", padx = "67", pady = "13")
+    button = Button(aboutMeFrame, text = "About me", bg="black", fg = "yellow", height = "2", width = "34", font = "comicsansms 17", borderwidth = 15, relief = SUNKEN, command = switchFile(showAbout))
+    button.pack()
+    aboutMeFrame.grid(row = 2, column = 0, columnspan = 2)
+    packs.append(aboutMeFrame)
 
     root.mainloop()
 
