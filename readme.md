@@ -63,12 +63,6 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
 
 ---
 
-## Current Status :
-
-Bug fixes, In condition to use
-
----
-
 ## Can I contribute ?
 Yes
  ### Contributors:
