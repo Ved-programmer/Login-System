@@ -63,12 +63,6 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
 
 ---
 
-## Can I contribute ?
-Yes
- ### Contributors:
-  - **Ved Rathi (owner)** 
-  - **Navdeep Kante**
-
 
 <br><br>
 
