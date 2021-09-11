@@ -61,8 +61,6 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
 
    * While creating an account or changing password, the checks.py file does important checks, like the strength of the password, checking if no duplicate accounts can be made etc.  
 
----
-
 
 <br><br>
 
