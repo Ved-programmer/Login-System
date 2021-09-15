@@ -14,7 +14,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
    
 
 - ### Overview :
-   * The main.pyw file shows four buttons of the four features(Signing up, Logging in, deleting, changing password), each feature has two files, one for the front end and one for the backend. 
+   * The main.pyw file shows four buttons of the four features(Signing up, Logging in, Deleting, Changing password), each feature has two files, one for the front end and one for the backend. 
    
    * Some files checks.py, hashing.py, backEndUtilityFuncs.py and the guiUtilityFuncs.py are files that either stop repetetive code or have seperate logic.
 
