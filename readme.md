@@ -2,7 +2,7 @@
 
 ## About
 
-*A Login System Made with Python 3.9*
+*A Login System Made with Python*
 
 It supports functionality like creating an account, logging in, changing the password of an account and deleting an account. The passwords are encrypted so access to the username-password index wouldn't let an hacker know the password to your account. 
 
