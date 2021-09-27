@@ -4,6 +4,7 @@ def usernameExists(username):
         for i in f.readlines():
             if i == "\n":continue
             if i[:i.index("-")] == username:return True
+    
     return False
 
 def getLine(username):
@@ -23,3 +24,5 @@ def checkIfCorrect(username, password):
     storePassword = line[1][line[1].index("-") + 1:]
     userPasswordHash = hashing.encrypt(password)
     return storePassword == userPasswordHash
+
+
