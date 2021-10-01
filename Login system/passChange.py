@@ -3,11 +3,11 @@ import hashing
 import backEndUtilityFuncs
 
 def passChange(username, oldPassword, newPassword):
-    if oldPassword == newPassword:return checks.message(False, "The new password can't be the same as the old password")
+    if oldPassword == newPassword:return checks.message(False, "The new password can't be the\nsame as the old password")
     check = checks.check(username, newPassword, True)
     if check.accepted:
         if backEndUtilityFuncs.checkIfCorrect(username, oldPassword):setPassword(username, newPassword)
-        else:return checks.message(False, "Either the username or the password is incorrect")
+        else:return checks.message(False, "Either the username or\nthe password is incorrect")
     return check
 
 
