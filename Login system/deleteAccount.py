@@ -11,3 +11,4 @@ def delete(username, password):
                 f.write(i)
         return True
     return False
+    
