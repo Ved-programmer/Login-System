@@ -1,5 +1,6 @@
 letter = """abcdefghijklmnopqrstuvwxyz"""
 letter += letter.upper() + """1234567890#!@$%^&*()[] "<>?/;:`~,.'=_-"""
+
 def revert_back(string, times):
     string = list(string)
     for i in range(len(string)):
@@ -10,6 +11,7 @@ def logic(string):
     length = len(string)
     final = length
     double = 2 * length
+
     for i in range(length):
         if string[i] == "0":
             final -= length - length // 3
@@ -26,7 +28,7 @@ def logic(string):
             final += final^2//length + 3
         else:
             final += 2
-        
+
     return final
 
 
@@ -45,6 +47,7 @@ def increaseStringSize(string):
         else:idx2 = letter.index(string[j]) + 2
         idx3 = abs(letter.index(cur[j]) - len(string)) % len(letter)
         increasedSizedString += letter[idx1] + letter[idx2] + letter[idx3]
+
     return increasedSizedString
 
 def encrypt(string, encryptionLevel = 2):
@@ -54,3 +57,4 @@ def encrypt(string, encryptionLevel = 2):
         stringLogic = logic(cur)
         cur = revert_back(increasedStringSize, stringLogic)
     return cur
+    
