@@ -1,11 +1,22 @@
 from tkinter import Button, Entry, Label, X,  TOP, Frame, LEFT, StringVar,Tk
-import signUp
-import guiUtilityFuncs
+import utility
 import tkinter.font as tkFont
+
+from hashing import encrypt
+import checks
+def addToIndex(username, password):
+    result = checks.check(username, password, False)
+    # print(result)
+    if result.accepted:
+        password = encrypt(password)
+        with open("data.txt", "a") as f:
+            f.write(f"{username}-{password}\n")
+    return result
+    
 
 def check():
     global signUpMessage
-    result = signUp.addToIndex(username.get(), password.get())
+    result = addToIndex(username.get(), password.get())
     try:signUpMessage.grid_forget()
     except Exception:pass
     if result.accepted:signUpMessage = Label(frame, text = "created account", font = messageHeight)
@@ -23,25 +34,25 @@ def main(root, WIDTH, HEIGHT, wu, hu):
     packs = []
 
     #Setting Heading and Frame
-    guiUtilityFuncs.headingDesign("Sign up", packs, root, HEIGHT)
-    frame = guiUtilityFuncs.formFrameDesign(root, packs, WIDTH)
+    utility.headingDesign("Sign up", packs, root, HEIGHT)
+    frame = utility.formFrameDesign(root, packs, WIDTH)
 
     #Labels
-    guiUtilityFuncs.entranceLabelDesign(frame, "username: ", 0, 0, HEIGHT)
-    guiUtilityFuncs.entranceLabelDesign(frame, "password: ", 1, 0, HEIGHT)
+    utility.entranceLabelDesign(frame, "username: ", 0, 0, HEIGHT)
+    utility.entranceLabelDesign(frame, "password: ", 1, 0, HEIGHT)
 
     #Inputs
-    username = guiUtilityFuncs.entranceDesign(frame, 0, 1, HEIGHT)
-    password = guiUtilityFuncs.entranceDesign(frame, 1, 1, HEIGHT)
+    username = utility.entranceDesign(frame, 0, 1, HEIGHT)
+    password = utility.entranceDesign(frame, 1, 1, HEIGHT)
 
     submitButton = Button(frame, text = "Sign Up", command = check, font = tkFont.Font(size = -int(HEIGHT/14)), borderwidth = 10)
     submitButton.grid(row = 2, column = 0)
 
-    goBack = Button(frame, text = "go back", command = lambda : guiUtilityFuncs.back(packs, root), font = tkFont.Font(size = -int(HEIGHT/14)), borderwidth = 10)
+    goBack = Button(frame, text = "go back", command = lambda : utility.back(packs, root), font = tkFont.Font(size = -int(HEIGHT/14)), borderwidth = 10)
     goBack.grid(row = 3, column = 0)
 
     root.mainloop()
 
 if __name__ == "__main__":
-    root = guiUtilityFuncs.basicStructure(612, 378, 1, "Delete Account")
+    root = utility.basicStructure(612, 378, 1, "Delete Account")
     main(root, 612, 378, 612/1000, 378/1000)
