@@ -1,4 +1,4 @@
-from backEndUtilityFuncs import usernameExists
+from utility import usernameExists
 def check(username, password, passChange):
     securePasswordChecks = [passLenCheck, containsProperChars]
     usernameChecks = [usernameCharCheck, usernameExistsCheck]
