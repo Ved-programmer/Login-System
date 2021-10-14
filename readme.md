@@ -19,7 +19,6 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#!@$%^&*()[] <>?/;
    * The main.pyw is the main entry point to the program. 
    
    * The starting screen shows four buttons of the four features(Signing up, Logging in, Deleting, Changing password)
-
    
 
 - ### Interaction between files :
