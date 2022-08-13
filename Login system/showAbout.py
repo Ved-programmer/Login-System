@@ -11,8 +11,8 @@ def main(root, WIDTH, HEIGHT, wu, hu):
     Label(win, text = "About The creators", font = tkFont.Font(size = -int(HEIGHT/8)), fg = "white", bg = "black").place(x = WIDTH//2, y = 100*hu, anchor = "center")
 
     string = """
-    The first version of the project was created by 
-    Navdeep Kante, assisted by Ved Rathi. 
+    This project was created by 
+    Ved Rathi, assisted by Navdeep. 
     """
 
     def back():
